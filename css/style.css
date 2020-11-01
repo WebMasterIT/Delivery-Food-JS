@@ -184,7 +184,11 @@ button {
 }
 
 .vegetables {
+<<<<<<< HEAD
     background: #FFF566 url(../img/promo/vegetables.png)  no-repeat top 0px right 0 / 850px
+=======
+    background: #FFF566 url(../img/promo/vegetables.png) no-repeat top 0 right 0 / 850px
+>>>>>>> b558cea6eb8579415a3722646723ba236793e82b
 }
 
 .sushi {
