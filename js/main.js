@@ -4,6 +4,7 @@ const close = document.querySelector(".close");
 const buttonAuth = document.querySelector(".button-auth");
 const modalAuth = document.querySelector(".modal-auth");
 const closeAuth = document.querySelector(".close-auth");
+const closeCart = document.querySelector(".close");
 const logInForm = document.querySelector("#logInForm");
 const loginInput = document.querySelector("#login");
 const passwordInput = document.querySelector("#password");
@@ -108,6 +109,15 @@ function toggleModalAuth() {
   passwordInput.style.borderColor = "";
 }
 
+function toggleModalCart(){
+  
+  if (modal.classList.contains("is-open")) {
+    disableScroll();
+  } else {
+    enableScroll();
+  }
+}
+
 function returnMain() {
   containerPromo.classList.remove('hide');
   restaurants.classList.remove('hide');
@@ -142,8 +152,6 @@ function notAuthorized() {
   function logIn(event) {
     event.preventDefault();
 
-    
-
     if (validName(loginInput.value.trim())) {
       login = loginInput.value;
       localStorage.setItem("gloDelivery", login);
@@ -151,6 +159,7 @@ function notAuthorized() {
       downloadCart();
       buttonAuth.removeEventListener("click", toggleModalAuth);
       closeAuth.removeEventListener("click", toggleModalAuth);
+      closeCart.removeEventListener("click", toggleModalCart);
       logInForm.removeEventListener("submit", logIn);
       logInForm.reset();
       checkAuth();
@@ -164,7 +173,7 @@ function notAuthorized() {
   }
 
   buttonAuth.addEventListener("click", toggleModalAuth);
-  closeAuth.addEventListener("click", toggleModalAuth);
+  closeAuth.addEventListener("click", toggleModalAuth );
   logInForm.addEventListener("submit", logIn);
   modalAuth.addEventListener("click", function (event) {
     if (event.target.classList.contains("is-open")) {
@@ -339,26 +348,22 @@ function init() {
 
   cardsMenu.addEventListener("click", addToCart);
 
+  modal.addEventListener("click", function (event) {
+    if (event.target.classList.contains("is-open")) {
+      toggleModal();
+  }
+})
+
   cartButton.addEventListener("click", function () {
     renderCart();
     toggleModal();
-    if (modal.classList.contains("is-open")) {
-      disableScroll(); 
-    } else {
-      enableScroll();
-      console.log(100+200);
-    } 
-
-    if (modal.classList.contains("is-open")) {
-      console.log(100+200)
-      enableScroll();
-    }
-
+    toggleModalCart();
   });
 
   modalBody.addEventListener("click", changeCount);
 
   close.addEventListener("click", toggleModal);
+  close.addEventListener('click', toggleModalCart);
 
   cardsRestaurants.addEventListener("click", openGoods);
 
