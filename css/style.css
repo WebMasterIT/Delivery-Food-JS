@@ -79,8 +79,8 @@ button {
 }
 
 .button:hover {
-    background: #1890ff;
-    border: 1px solid #1890ff;
+    background: #1676cf;
+    /* border: 1px solid #1890ff; */
     color: #fff;
 }
 
@@ -93,9 +93,9 @@ button {
 }
 
 .button-primary:hover {
-    background: #ffffff;
+    background:#1676cf;
     border: 1px solid #d9d9d9;
-    color: #595959;
+    color: #ffffff;
 }
 
 .button-icon {
@@ -120,7 +120,7 @@ button {
 }
 
 .button-primary:hover .button-auth-svg {
-    background-color: #595959;
+    background-color: #fff;
 }
 
 .button .button-cart-svg {
@@ -141,7 +141,7 @@ button {
 }
 
 .button-primary:hover .button-cart-svg {
-    background-color: #595959;
+    background-color: #fff;
 }
 
 .button-cart {
@@ -206,6 +206,11 @@ button {
     line-height: 28px;
     color: #302c34;
     max-width: 538px;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    cursor: pointer;
 }
 
 .main {
@@ -430,13 +435,18 @@ button {
     display: flex;
 }
 
+ 
+
 .modal-dialog {
     max-width: 780px;
     width: 95%;
     background: #ffffff;
     border-radius: 5px;
     margin: auto;
-    padding: 40px 45px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    padding-right: 50px;
+    padding-left: 50px;
 }
 
 .modal-dialog-auth {

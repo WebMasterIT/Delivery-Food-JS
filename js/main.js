@@ -28,6 +28,7 @@ const modalPrice = document.querySelector(".modal-pricetag");
 const buttonClearCart = document.querySelector(".clear-cart");
 
 const modalDialog = document.querySelector('.modal-dialog');
+const swiperPagination = document.querySelector('.swiper-pagination');
 
 
 
@@ -66,9 +67,7 @@ function validName(str) {
   const regName = /^[a-zA-Z][a-zA-Z0-9-_\.]{3,20}$/;
   return regName.test(str);
 }
-
-console.log(validName("M211"));
-
+ 
 function toggleModal() {
   modal.classList.toggle("is-open");
 }
@@ -248,7 +247,7 @@ function createCardGood({ description, id, image, name, price }) {
 			  <span class="button-card-text">В корзину</span>
 			  <span class="button-cart-svg"></span>
 			</button>
-		<strong class="card-price card-price-bold">${price}</strong>
+		<strong class="card-price-bold">От ${price} ₽</strong>
   </div>          
   `
   );
@@ -265,10 +264,10 @@ function openGoods(event) {
       cardsMenu.textContent = "";
       containerPromo.classList.add("hide");
       restaurants.classList.add("hide");
+      swiperPagination.classList.add("hide");
       menu.classList.remove("hide");
 
       const { name, kitchen, price, stars } = restaurant.info;
-      console.log(restaurantTitle.textContent);
       restaurantTitle.textContent = name;
       restaurantRating.textContent = stars;
       restaurantPrice.textContent = `От ${price} ₽`;
@@ -344,6 +343,7 @@ function init() {
     cart.length = 0;
     renderCart();
     toggleModal();
+    enableScroll();
   })
 
   cardsMenu.addEventListener("click", addToCart);
@@ -351,6 +351,7 @@ function init() {
   modal.addEventListener("click", function (event) {
     if (event.target.classList.contains("is-open")) {
       toggleModal();
+      enableScroll();
   }
 })
 
@@ -444,6 +445,3 @@ function init() {
 }
 
 init();
-
-
-
