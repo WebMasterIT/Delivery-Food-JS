@@ -78,7 +78,8 @@ function renderCart() {
     const itemCart = `
       <div class="food-row">
 					<span class="food-name">${title}</span>
-					<strong class="food-price">${cost}</strong>
+          <strong class="food-price">${cost}</strong>
+					<strong class="food-price-ruble">₽</strong>
 				<div class="food-counter">
 					<button class="counter-button counter-minus" data-id=${id}>-</button>
 					<span class="counter">${count}</span>

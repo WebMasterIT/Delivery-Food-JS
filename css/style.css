@@ -522,6 +522,15 @@ button {
     line-height: 32px;
 }
 
+.food-price-ruble {
+    margin-left: -40px;
+    margin-right: 47px;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 32px;
+}
+
+
 .food-counter {
     display: flex;
     align-items: center;
