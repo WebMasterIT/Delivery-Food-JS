@@ -430,7 +430,9 @@ function init() {
   new Swiper(".swiper-container", {
     sliderPerView: 1,
     loop: true,
-    autoplay: true,
+    autoplay: {
+      delay: 4500,
+    },
     effect: "cube",
     grabCursor: true,
     cubeEffect: {
